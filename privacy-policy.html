@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>นโยบายความเป็นส่วนตัว | Cruzee Thailand</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #FF6B2B;
+      --orange-light: #FF8F5E;
+      --navy: #1A2B4A;
+      --navy-light: #2C3E5D;
+      --cream: #FFF9F5;
+      --gray: #6B7A90;
+      --border: #E8EDF5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      line-height: 1.8;
+    }
+
+    /* Header */
+    header {
+      background: var(--navy);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(26,43,74,0.3);
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg { width: 26px; height: 26px; fill: white; }
+
+    .header-text h1 {
+      font-family: 'Kanit', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0.02em;
+    }
+
+    .header-text p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+    }
+
+    /* Hero band */
+    .hero {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50%;
+      top: -100px; right: -120px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 250px; height: 250px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+      bottom: -80px; left: -60px;
+    }
+
+    .hero h2 {
+      font-family: 'Kanit', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .updated-badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      font-size: 13px;
+      padding: 5px 16px;
+      border-radius: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Main content */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* TOC */
+    .toc {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--orange);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .toc-title {
+      font-family: 'Kanit', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc li {
+      margin: 6px 0;
+    }
+
+    .toc a {
+      color: var(--navy-light);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover { color: var(--orange); }
+
+    /* Section */
+    section {
+      margin-bottom: 44px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .section-num {
+      width: 36px;
+      height: 36px;
+      background: var(--orange);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Kanit', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-family: 'Kanit', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+
+    p { font-size: 15.5px; color: #3D4F6A; margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 20px;
+      margin: 10px 0 14px;
+    }
+
+    li {
+      font-size: 15.5px;
+      color: #3D4F6A;
+      margin: 7px 0;
+    }
+
+    .highlight-box {
+      background: #FFF4EE;
+      border: 1px solid #FFD4BE;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 16px 0;
+    }
+
+    .highlight-box p {
+      color: #7A3010;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .highlight-box strong { color: var(--orange); }
+
+    /* SMS specific */
+    .sms-card {
+      background: linear-gradient(135deg, #F0F4FF 0%, #E8F0FF 100%);
+      border: 1px solid #C5D4F0;
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+
+    .sms-card .tag {
+      display: inline-block;
+      background: var(--navy);
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      font-family: 'Kanit', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 24px; }
+    }
+
+    .contact-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      background: #FFF0E8;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .contact-item h4 {
+      font-family: 'Kanit', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+
+    .contact-item p {
+      font-size: 15px;
+      color: var(--navy);
+      margin: 0;
+    }
+
+    .contact-item a { color: var(--orange); text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13.5px;
+    }
+
+    footer strong { color: white; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="8" r="3.5"/>
+        <ellipse cx="12" cy="17" rx="6" ry="3"/>
+        <circle cx="6" cy="14" r="2.5" opacity=".7"/>
+        <circle cx="18" cy="14" r="2.5" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Cruzee Thailand</h1>
+      <p>นโยบายความเป็นส่วนตัว · Privacy Policy</p>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <h2>นโยบายความเป็นส่วนตัว</h2>
+  <p>Cruzee Thailand ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของคุณ</p>
+  <span class="updated-badge">อัปเดตล่าสุด: มีนาคม 2569 (2026)</span>
+</div>
+
+<main>
+
+  <div class="toc">
+    <div class="toc-title">สารบัญ</div>
+    <ol>
+      <li><a href="#section1">ข้อมูลที่เราเก็บรวบรวม</a></li>
+      <li><a href="#section2">วัตถุประสงค์ในการใช้ข้อมูล</a></li>
+      <li><a href="#section3">การส่ง SMS และการสื่อสาร</a></li>
+      <li><a href="#section4">การเปิดเผยข้อมูลต่อบุคคลที่สาม</a></li>
+      <li><a href="#section5">ความปลอดภัยของข้อมูล</a></li>
+      <li><a href="#section6">สิทธิของเจ้าของข้อมูล</a></li>
+      <li><a href="#section7">ติดต่อเรา</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <section id="section1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h3>ข้อมูลที่เราเก็บรวบรวม</h3>
+    </div>
+    <div class="card">
+      <p>Cruzee Thailand เก็บรวบรวมข้อมูลส่วนบุคคลเมื่อคุณสมัครสมาชิก ลงทะเบียนเข้าร่วมกิจกรรม หรือติดต่อเราผ่านช่องทางต่างๆ ข้อมูลที่เราเก็บ ได้แก่:</p>
+      <ul>
+        <li>ชื่อ-นามสกุลของผู้ปกครองและเด็ก</li>
+        <li>หมายเลขโทรศัพท์มือถือ</li>
+        <li>อีเมล</li>
+        <li>อายุของเด็กที่เข้าร่วมกิจกรรม</li>
+        <li>ประวัติการลงทะเบียนและเข้าร่วมกิจกรรม</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="section2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h3>วัตถุประสงค์ในการใช้ข้อมูล</h3>
+    </div>
+    <div class="card">
+      <p>เราใช้ข้อมูลของคุณเพื่อวัตถุประสงค์ดังต่อไปนี้เท่านั้น:</p>
+      <ul>
+        <li>ดำเนินการลงทะเบียนและยืนยันการสมัครเข้าร่วมกิจกรรม</li>
+        <li>ส่งข้อมูลสำคัญเกี่ยวกับกิจกรรมที่คุณลงทะเบียน เช่น รหัส OTP สำหรับเข้าสู่ระบบ และการแจ้งเตือนกำหนดการ</li>
+        <li>ติดต่อคุณในกรณีฉุกเฉินหรือมีการเปลี่ยนแปลงที่เกี่ยวข้องกับกิจกรรม</li>
+        <li>ปรับปรุงคุณภาพบริการและกิจกรรมของเรา</li>
+      </ul>
+      <div class="highlight-box">
+        <p>🔒 <strong>สำคัญ:</strong> เราไม่ใช้ข้อมูลของคุณเพื่อวัตถุประสงค์ทางการตลาดโดยไม่ได้รับความยินยอม และไม่แบ่งปันข้อมูลกับบุคคลภายนอกเพื่อการโฆษณา</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="section3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h3>การส่ง SMS และการสื่อสาร</h3>
+    </div>
+    <div class="sms-card">
+      <div class="tag">📱 SMS Policy</div>
+      <p>Cruzee Thailand อาจส่ง SMS ถึงหมายเลขโทรศัพท์ที่คุณให้ไว้ในกรณีต่อไปนี้:</p>
+      <ul>
+        <li><strong>รหัส OTP / PIN:</strong> เมื่อคุณร้องขอรหัสผ่านสำหรับเข้าสู่บัญชีของคุณในระบบลงทะเบียนกิจกรรม (ready-go.fun)</li>
+        <li><strong>การยืนยันการลงทะเบียน:</strong> แจ้งผลการสมัครและรายละเอียดกิจกรรม</li>
+        <li><strong>การแจ้งเตือนสำคัญ:</strong> การเปลี่ยนแปลงกำหนดการ สถานที่ หรือข้อมูลเร่งด่วนที่เกี่ยวกับกิจกรรม</li>
+      </ul>
+      <div class="highlight-box" style="background:#EEF2FF; border-color:#C5D4F0;">
+        <p style="color:#1A2B4A;"><strong>การยกเลิก SMS:</strong> คุณสามารถยกเลิกการรับข้อความได้ตลอดเวลาโดยตอบกลับ <strong>STOP</strong> หากต้องการความช่วยเหลือ ตอบกลับ <strong>HELP</strong> — ข้อความและค่าบริการข้อมูลอาจมีผลบังคับใช้ตามแผนของผู้ให้บริการของคุณ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="section4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h3>การเปิดเผยข้อมูลต่อบุคคลที่สาม</h3>
+    </div>
+    <div class="card">
+      <p>Cruzee Thailand <strong>จะไม่ขาย แลกเปลี่ยน หรือถ่ายโอนข้อมูลส่วนบุคคลของคุณให้กับบุคคลภายนอก</strong> เพื่อวัตถุประสงค์ทางการตลาดหรือเชิงพาณิชย์</p>
+      <p>เราอาจแบ่งปันข้อมูลกับผู้ให้บริการที่เชื่อถือได้ซึ่งช่วยเราดำเนินงาน (เช่น ระบบส่ง SMS ระบบลงทะเบียน) โดยผู้ให้บริการเหล่านั้นมีหน้าที่รักษาความลับของข้อมูล และไม่ได้รับอนุญาตให้ใช้ข้อมูลเพื่อวัตถุประสงค์อื่น</p>
+      <p>เราอาจเปิดเผยข้อมูลเมื่อได้รับการร้องขอตามกฎหมาย หรือเพื่อปกป้องสิทธิและความปลอดภัยของเราและผู้อื่น</p>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="section5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h3>ความปลอดภัยของข้อมูล</h3>
+    </div>
+    <div class="card">
+      <p>เราใช้มาตรการรักษาความปลอดภัยที่เหมาะสมเพื่อปกป้องข้อมูลส่วนบุคคลของคุณจากการเข้าถึง การใช้ หรือการเปิดเผยโดยไม่ได้รับอนุญาต ซึ่งรวมถึงการเข้ารหัสข้อมูลและการจำกัดการเข้าถึงเฉพาะบุคลากรที่จำเป็น</p>
+      <p>อย่างไรก็ตาม ไม่มีวิธีการส่งข้อมูลผ่านอินเทอร์เน็ตหรือการจัดเก็บข้อมูลทางอิเล็กทรอนิกส์ใดที่ปลอดภัย 100% เราจึงไม่สามารถรับประกันความปลอดภัยสัมบูรณ์ได้</p>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="section6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h3>สิทธิของเจ้าของข้อมูล</h3>
+    </div>
+    <div class="card">
+      <p>คุณมีสิทธิดังต่อไปนี้เกี่ยวกับข้อมูลส่วนบุคคลของคุณ:</p>
+      <ul>
+        <li><strong>สิทธิ์เข้าถึง</strong> — ขอดูข้อมูลที่เราเก็บรักษาเกี่ยวกับคุณ</li>
+        <li><strong>สิทธิ์แก้ไข</strong> — ขอแก้ไขข้อมูลที่ไม่ถูกต้องหรือไม่ครบถ้วน</li>
+        <li><strong>สิทธิ์ลบ</strong> — ขอให้ลบข้อมูลของคุณออกจากระบบของเรา</li>
+        <li><strong>สิทธิ์ถอนความยินยอม</strong> — ถอนความยินยอมในการรับการสื่อสารได้ทุกเมื่อ</li>
+      </ul>
+      <p>หากต้องการใช้สิทธิเหล่านี้ กรุณาติดต่อเราตามช่องทางด้านล่าง</p>
+    </div>
+  </section>
+
+  <!-- Section 7 -->
+  <section id="section7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h3>ติดต่อเรา</h3>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon">🏢</div>
+        <div>
+          <h4>บริษัท</h4>
+          <p>Cruzee Thailand</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🌐</div>
+        <div>
+          <h4>เว็บไซต์</h4>
+          <p><a href="https://cruzeekidz.github.io" target="_blank">cruzeekidz.github.io</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div>
+          <h4>LINE Official</h4>
+          <p><a href="https://line.me/R/ti/p/@cruzee" target="_blank">@cruzee</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📘</div>
+        <div>
+          <h4>Facebook</h4>
+          <p><a href="https://www.facebook.com/cruzeethailand" target="_blank">Cruzee Thailand</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <p style="font-size:14px; color: var(--gray); text-align:center;">
+    นโยบายนี้อาจมีการเปลี่ยนแปลงได้ โดยเราจะแจ้งให้ทราบผ่านช่องทางการสื่อสารของเรา<br/>
+    การใช้บริการของเราถือว่าคุณยอมรับนโยบายความเป็นส่วนตัวฉบับนี้
+  </p>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 <strong>Cruzee Thailand</strong> · All rights reserved · นโยบายความเป็นส่วนตัว</p>
+</footer>
+
+</body>
+</html>
